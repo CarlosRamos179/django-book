@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 #from django.contrib import admin
-from django.urls import path #befofe it was django.config.url include, url (now url its re_path)
+from django.urls import path #befofe it was django.config.url include, url (now urmientamela ml its re_path)
 from . import view
 
 urlpatterns = [
     path('hola/', view.hola, name='hola'),
+    path('fecha/', view.fecha_actual, name='fecha'),
+    path('fecha/mas/<int:offset>', view.horas_adelante, name='horas_adelante'),
 ]
