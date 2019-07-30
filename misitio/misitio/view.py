@@ -1,6 +1,6 @@
 import datetime
 from django.shortcuts import render
-from django.http import Http404
+from django.http import Http404, HttpResponse
 
 def hola(request):
     return HttpResponse("Hola Mundo!")
@@ -17,4 +17,9 @@ def horas_adelante(request, offset):
     dt = datetime.datetime.now() + datetime.timedelta(hours = offset)
     #assert False
     return render(request, "horas_adelante.html", {'hora_siguiente': dt, 'hora': offset})
+
+def atributos_meta(request):
+    valor = request.META.items()
+    valor = sorted(valor)
+    return render(request, "cabeceras_http.html", {'cabeceras': valor})
 

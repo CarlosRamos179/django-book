@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %} Cabeceras HTTP {% endblock %}
+
+{% block content %}
+    {% for k in cabeceras %}
+        <p> {{ k }} </p>
+    {% endfor %}
+{% endblock %}
